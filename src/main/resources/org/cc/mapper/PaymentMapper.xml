@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cc.mapper.PaymentMapper">
+	<select id="getList" resultType="org.cc.domain.PaymentVO">
+		select * from payment where
+		userid=#{userId}
+	</select>
+	<insert id="insert">
+		insert into payment(payNo, userId, price, images,
+		Recipient, phone, address, detailaddress, deliveryMemo)
+		value(#{payNo},#{userId},#{price},#{images},#{Recipient},#{phone},#{address},#{detailAddress},#{deliveryMemo});
+	</insert>
+</mapper>

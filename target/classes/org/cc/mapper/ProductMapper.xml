@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cc.mapper.ProductMapper">
+
+<select id="getProduct" resultType="org.cc.domain.ProductVO">
+	select * from product where itemNo = #{itemNo}
+</select>
+
+<select id="getSales1" resultType="org.cc.domain.ProductVO">
+	select * from product where category = 3
+</select>
+
+<select id="getSales2" resultType="org.cc.domain.ProductVO">
+	select * from product where category = 4
+</select>
+
+</mapper>

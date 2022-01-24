@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cc.mapper.CartMapper">
+
+<select id="getList" resultType="org.cc.domain.CartVO">
+	select * from cart where userId=#{userId}
+</select>
+<delete id="cartDelete">
+	delete from cart where cartNo=#{cartNo}
+</delete>
+<select id="getListId" resultType="org.cc.domain.CartVO">
+	select * from cart where cartNo=#{cartNo}
+</select>
+<insert id="addCart">
+	    insert into cart(userId, itemName, color, size, quantity, price, category, image)
+	    values(#{userId}, #{itemName}, #{color}, #{size}, #{quantity}, #{price}, #{category}, #{image})
+</insert>
+<select id="getLastItem" resultType="org.cc.domain.CartVO">
+	select * from cart order by cartNo desc limit 1
+</select>
+</mapper>

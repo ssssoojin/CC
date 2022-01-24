@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cc.mapper.MemberMapper"> <!-- 인터페이스위치 -->
+
+
+
+<!-- 회원가입 -->
+<insert id="register">
+    insert into member(userId, userPwd, userName,userSex,userBirth,userEmail)
+    		values(#{userId},#{userPwd},#{userName},#{userSex},#{userBirth},#{userEmail})
+</insert>
+
+<!-- 로그인 -->
+<select id="login" resultType="org.cc.domain.MemberVO">
+  select *
+  from member
+  where userId=#{userId} and userPwd=#{userPwd}
+ </select>
+ 
+<!-- 아이디 중복검사 -->
+<select id="idCheck" resultType="int">
+	select count(*) from member where userId=#{userId}
+</select>
+<!-- 회원 정보 -->
+	<select id="getMemberInfo" resultType="org.cc.domain.MemberVO">
+			select * from member where userId=#{userId}
+	</select>
+	
+<!--회원 정보 수정 -->
+<update id="updateInfo">
+	update member
+	set userName=#{userName}, userSex=#{userSex}, userBirth=#{userBirth},userEmail=#{userEmail}
+	where userId=#{userId}
+</update>
+
+<select id="getUuid" resultType="String">
+	select uuid
+	from member as m
+	join img_attach as i
+	on i.userId=m.userId
+	where m.userId=#{userId}
+	order by regDate desc limit 1
+</select>
+
+<update id="updateImg" >
+	update member set img ="O" where userId=#{userId}
+</update>
+
+<delete id="delete">
+	delete from member where userId=#{userId}
+	</delete>
+</mapper>

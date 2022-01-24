@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/* 초기 설정 */
+* {
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: hidden; 
+}
+
+
+/* 콘텐츠 */
+.container {
+	width: 80%;
+	height: calc(100% - 160px - 50px);
+	margin: auto;
+}
+.product-imgs{
+    display: flex;
+    float: left;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+img{
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin: 5rem 0 5rem 0 !important;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+.product-content{
+	padding: 5rem 0 0 3rem;
+	float: right;
+    width: 50%;
+    height: 100%;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+    text-decoration: underline; 
+    text-underline-position:under;
+}
+/* .product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+} */
+/* .product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+} */
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.price span{
+    color: #256eff;
+}
+.product-detail {
+	margin-top: 2rem;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 1rem;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(/resources/images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info {
+	margin-top: 2rem;
+}
+.purchase-info input,
+.purchase-info .bt{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 60px;
+}
+.purchase-info .bt{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .bt:first-of-type{
+    background: #256eff;
+}
+.purchase-info .bt:last-of-type{
+    background: #f64749;
+}
+.purchase-info .bt:hover{
+    opacity: 0.9;
+}
+
+.handle-counter { overflow: hidden; }
+
+.handle-counter .counter-minus,  .handle-counter .counter-plus,  .handle-counter input {
+  float: left;
+  text-align: center;
+}
+
+.handle-counter .counter-minus,  .handle-counter .counter-plus { text-align: center; }
+
+.handle-counter input {
+  width: 50px;
+  border-width: 1px;
+  border-left: none;
+  border-right: none;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.btn:disabled, .btn:disabled:hover {
+  background-color: darkgrey;
+  cursor: not-allowed;
+}
+
+.btn-primary { background-color: #009dda; }
+
+.btn-primary:hover, .btn-primary:focus { background-color: #0486b9; }
+
+
+/* 푸터 */
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: rgb(252, 123, 112);
+	height: 50px;
+	text-align: center;
+}
+
+footer h3 {
+	font: normal 36px 'Architects Daughter';
+	color: white;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cc.mapper.MemberAttachMapper"> <!-- 인터페이스위치 -->
+
+<insert id="insert">
+ 		insert into img_attach (uuid, uploadpath, filename,filetype, userId)
+ 		values (#{uuid}, #{uploadPath}, #{fileName},#{fileType}, #{userId})
+ 	</insert>
+
+<delete id="delete">
+ 		delete from img_attach where uuid = #{uuid}
+ 	</delete>
+ 	
+ 	<select id="findByUserId" resultType="org.cc.domain.MemberAttachVO">
+ 		select * from img_attach where userId = #{userId}
+ 	</select>
+ 	
+<!--회원 사진 수정 -->
+<update id="update">
+	update img_attach
+	set uuid=#{uuid}, uploadPath=#{uploadPath}, fileName=#{fileName},fileType=#{fileType}
+	where userId=#{userId}
+</update>
+
+<delete id="deleteAll">
+ 		delete from img_attach where userId = #{userId}
+ 	</delete>
+
+
+</mapper>
